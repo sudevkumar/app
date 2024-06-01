@@ -156,7 +156,7 @@ export default function Home() {
 
               {/* Today's temp with time */}
               <div className="flex gap-10 sm:gap-1 overflow-x-auto w-full justify-between pr-3">
-                {currentDayResults?.map((ele, ind) => (
+                {currentDayResults?.map((ele: any, ind: any) => (
                   <div
                     key={ind}
                     className=" flex flex-col justify-between gap-2 items-center text-xs font-semibold"
@@ -187,9 +187,7 @@ export default function Home() {
             <div className="flex gap-2 sm:gap-6 overflow-x-auto w-full justify-between ">
               <div className=" bg-green-300/80 w-[200px] flex flex-col justify-between items-center p-3 rounded-md mb-2">
                 <p className=" font-bold text-sm">Visibility</p>
-                <span>
-                  {/* <FaEye className=" text-xl sm:text-3xl " /> */}
-                </span>
+                <span>{/* <FaEye className=" text-xl sm:text-3xl " /> */}</span>
                 <p className=" font-bold">
                   {data?.list[0]?.visibility / 1000}Km
                 </p>
@@ -247,10 +245,13 @@ export default function Home() {
           <p className=" text-white font-bold text-2xl md:text-3xl">
             Next 5 days Forcast
           </p>
-          {firstDAteForEachDate.map((ele) => {
+          {firstDAteForEachDate.map((ele, ind) => {
             console.log(ele);
             return (
-              <div className=" flex gap-4 h-[100px] w-full sm:w-[80%] m-auto sm:h-auto">
+              <div
+                className=" flex gap-4 h-[100px] w-full sm:w-[80%] m-auto sm:h-auto"
+                key={ind}
+              >
                 {/* left */}
                 <CommonContainer className=" w-[150px] justify-center flex-col px-4 gap-2 items-center">
                   <p className=" capitalize text-center font-bold">
